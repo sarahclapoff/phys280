@@ -16,18 +16,8 @@
 # Hint: Use the sampler ExactSolver from dimod to generate a list of all possibilities.
 # 
 
-# In[1]:
-
-
-print("hello!")
-
-
 # In[ ]:
 
-<<<<<<< HEAD
-print("heehee")
-=======
->>>>>>> 5db8f7756f728eb2a07cd9e8c9831fb5be7df60f
 
-
+print("test")
 
