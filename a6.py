@@ -24,7 +24,10 @@ print("hello!")
 
 # In[ ]:
 
+<<<<<<< HEAD
 print("heehee")
+=======
+>>>>>>> 5db8f7756f728eb2a07cd9e8c9831fb5be7df60f
 
 
 
