@@ -32,19 +32,20 @@ import dimod
 #use chaining to lock q0,q5 and set biases and strengths
 
 #look at it classically, map to chimera using 4 qubits (lecture notes 'Minor Embedding')
-#since b=q0=q5 do i need all 4 or just three? I think all 4 bc still doing it through leap?
+#since b=q0=q5 do i need all 4 or just three? Doing it classically so we don't have to worry about chaining
+#look at blue handwriting in notes for equation (q0=q5)
 
 #(format it nice from notes) bias of a,c = -1/3; bias of b = 1/3
-biases = {(0,0): 1/3, (1,1): -1/3, (4,4): -1/3, (5,5): 1/3}
+biases = {(0,0): -1/3, (1,1): -1/3, (4,4): -1/3} #, (5,5): 1/3}
 #(5,0) should have a high strength (so really low number) bc they're bonded together
-strengths = {(0,5): -1, (0,4): 2/3, (1,4): 2/3, (1,5): 2/3}
+strengths = {(0,4): 2/3, (1,4): 2/3, (1,0): 2/3} #, (0,5): -1}
 
 #dictionary of qubit biases and strengths
 Q = dict(biases)
 Q.update(strengths)
 
 #implement on "classical" exact solver
-classical_result = dimod.ExactSolver().sampleset(Q)
+classical_result = dimod.ExactSolver().sample_qubo(Q)
 print(classical_result)
 
 
