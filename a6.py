@@ -133,15 +133,15 @@ def sat3(a,b,c):
     
 #add clauses as constraints
 for i in range(8):
-    csp.add_constraint(sat3, [i, i+1, i+2])
+    csp.add_constraint(sat3, ['i', 'i+1', 'i+2'])
         
 # Convert the binary constraint satisfaction problem to a binary quadratic model
 bqm = dwavebinarycsp.stitch(csp)
 
 # Set up a solver using the local system’s default D-Wave Cloud Client configuration file
 # and sample 1000 times
-sampler = EmbeddingComposite(ExactSolver())
-sampleset = dimod.ExactSolver().sample_qubo(bqm)
+sampler = EmbeddingComposite(dimod.ExactSolver())
+sampleset = dimod.ExactSolver().sample(bqm)
 print(sampleset)
 #sampleset = sampler.sample(bqm)
 
