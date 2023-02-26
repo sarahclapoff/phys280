@@ -10,4 +10,3 @@ THEN in dwave Leap IDE:
 6. if you make any changes in IDE, you have to push the new copy in the IDE
 7. NOW since everything is in the repo you shouldnt have to redownload and reupload everything everytime you want to test?
 
-I think just having to download the python file sucks, but it's still stupid :(
